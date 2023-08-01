@@ -1,0 +1,48 @@
+.bodyContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.choose {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  color: #d5cea3;
+}
+
+.fighterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Center the images horizontally */
+  align-items: center; /* Center the images vertically */
+  padding: 0 100px 0 100px;
+  width: 100%;
+}
+
+.fighterContainer .fighter {
+  flex-basis: 33.33%; /* Set flex-basis to create 3 columns of images */
+  max-height: 375px; /* Set the maximum height for the images */
+  width: auto; /* Allow the width to adjust proportionally */
+}
+
+.fighterContainer img {
+  max-height: 275px; /* Set max-height to make the images fit the containers */
+  width: auto; /* Allow the width to adjust proportionally */
+  object-fit: contain;
+}
+
+#rock {
+  max-width: 280px;
+  max-height: 275px;
+}
+
+.fighters img {
+  transition: transform 1.2s ease;
+  transform: scale(1);
+}
+
+.fighters:hover img {
+  transition: 1.2s;
+  transform: scale(1.2);
+}

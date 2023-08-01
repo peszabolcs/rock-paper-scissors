@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a120b;
+  color: #e5e5cb;
+  min-height: 20vh;
+  font-size: 5em;
+}
+
+#headerText {
+  font-size: 3rem;
+}
