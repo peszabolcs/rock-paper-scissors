@@ -1,6 +1,16 @@
 import "./MainBody.css";
+import RoundResult from "../roundresult/RoundResult";
+import React, { useState } from "react";
+import ModalFunct from "../roundresult/Modal/Modal";
 
 function MainBody() {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handleImageClick = (playerValue) => {
+    RoundResult(playerValue);
+    setModalVisible(true);
+  };
+
   return (
     <>
       <div className="bodyContainer">
@@ -8,30 +18,32 @@ function MainBody() {
         <div className="fighterContainer">
           <div className="fighters">
             <img
-              src="./public/pics/rock.png"
+              src="./pics/rock.png"
               id="rock"
               alt="Rock"
-              // onClick={RoundResult}
+              onClick={() => handleImageClick(1)}
             />
           </div>
           <div className="fighters">
             <img
-              src="./public/pics/paper.png"
+              src="./pics/paper.png"
               id="paper"
               alt="paper"
-              // onClick={RoundResult}
+              onClick={() => handleImageClick(2)}
             />
           </div>
           <div className="fighters">
             <img
-              src="./public/pics/scissors.png"
+              src="./pics/scissors.png"
               id="scissors"
               alt="scissors"
-              // onClick={RoundResult}
+              onClick={() => handleImageClick(3)}
             />
           </div>
         </div>
       </div>
+      {/* Conditionally render ModalFunct */}
+      {modalVisible && <ModalFunct />}
     </>
   );
 }
