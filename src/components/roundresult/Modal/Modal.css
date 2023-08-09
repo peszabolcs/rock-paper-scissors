@@ -1,0 +1,71 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-main {
+  color: #d5cea3;
+}
+.modal-header {
+  text-align: center;
+}
+
+.modal-title {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 56px !important;
+}
+
+.modal-body {
+  min-height: 60vh;
+  overflow-y: auto;
+  padding-left: 30px;
+  font-size: 40px;
+}
+
+#roundNumber {
+  font-size: 40px;
+  text-align: center;
+}
+
+.standings {
+  padding-left: 50px;
+}
+
+#playerPoints {
+  color: #18206f;
+}
+
+#computerPoints {
+  color: #eec170;
+}
+
+#actionTextDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 7rem;
+  padding-bottom: 8rem;
+}
+
+.actionText {
+  text-align: center;
+  font-size: 50px;
+}
+
+.btn-close {
+  margin: 0 !important;
+  font-size: 36px !important;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.btn-group-lg > .btn,
+.btn-lg {
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-font-size: 2rem;
+  --bs-btn-border-radius: var(--bs-border-radius-lg);
+  font-size: 30px !important;
+}

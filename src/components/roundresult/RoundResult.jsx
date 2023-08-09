@@ -1,14 +1,12 @@
-import ModalFunct from "./Modal/Modal";
-let computerPoints = 0;
-let playerPoints = 0;
-let roundNumber = 0;
-export let convertedPlayerValue;
-export let convertedComputerValue;
-export let playerWon = true;
+export let computerPoints = 0;
+export let playerPoints = 0;
+export let roundNumber = 0;
+let convertedPlayerValue;
+let convertedComputerValue;
 export let rMainText;
-let rWinnerItem;
-let rLoserItem;
-let action;
+export let rWinnerItem;
+export let rLoserItem;
+export let action;
 
 const RoundResult = (playerValue) => {
   roundNumber++;
@@ -26,7 +24,7 @@ const RoundResult = (playerValue) => {
   }
   //testing:
   console.log("The player has choosen: " + convertedPlayerValue);
-  //
+
   let computerValue = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
   switch (computerValue) {
     case 1:
@@ -42,12 +40,6 @@ const RoundResult = (playerValue) => {
   //testing:
   console.log("The computer has choosen: " + convertedComputerValue);
   CalcRes(computerValue, playerValue);
-
-  return (
-    <>
-      <ModalFunct />
-    </>
-  );
 };
 
 //calculate result fuction
@@ -93,6 +85,7 @@ const CalcRes = (computerValue, playerValue) => {
       }
       break;
   }
+
   //testing
   console.log(rMainText);
   console.log(rWinnerItem);
@@ -107,9 +100,22 @@ const CalcRes = (computerValue, playerValue) => {
     case "Scissors":
       action = "shredded";
   }
+
+  if (rMainText === "You Won!") {
+    playerPoints++;
+  } else if (rMainText === "You Lost!") {
+    computerPoints++;
+  }
+
   //testing
   console.log(action);
   console.log(rLoserItem);
 };
+
+export function resetGame(reset) {
+  playerPoints = 0;
+  computerPoints = 0;
+  roundNumber = 0;
+}
 
 export default RoundResult;

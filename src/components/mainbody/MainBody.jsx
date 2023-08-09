@@ -1,16 +1,14 @@
-import "./MainBody.css";
-import RoundResult from "../roundresult/RoundResult";
 import React, { useState } from "react";
-import ModalFunct from "../roundresult/Modal/Modal";
+import "./MainBody.css";
+import RoundResult, { rMainText } from "../roundresult/RoundResult";
+import { ModalFunct, ColorChange } from "../roundresult/Modal/Modal";
 
 function MainBody() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleImageClick = (playerValue) => {
-    RoundResult(playerValue);
-    setModalVisible(true);
+  const openModal = () => {
+    setShowModal(true);
   };
-
   return (
     <>
       <div className="bodyContainer">
@@ -21,7 +19,11 @@ function MainBody() {
               src="./pics/rock.png"
               id="rock"
               alt="Rock"
-              onClick={() => handleImageClick(1)}
+              onClick={() => {
+                RoundResult(1);
+                openModal();
+                ColorChange(rMainText);
+              }}
             />
           </div>
           <div className="fighters">
@@ -29,7 +31,11 @@ function MainBody() {
               src="./pics/paper.png"
               id="paper"
               alt="paper"
-              onClick={() => handleImageClick(2)}
+              onClick={() => {
+                RoundResult(2);
+                openModal();
+                ColorChange(rMainText);
+              }}
             />
           </div>
           <div className="fighters">
@@ -37,13 +43,16 @@ function MainBody() {
               src="./pics/scissors.png"
               id="scissors"
               alt="scissors"
-              onClick={() => handleImageClick(3)}
+              onClick={() => {
+                RoundResult(3);
+                openModal();
+                ColorChange(rMainText);
+              }}
             />
           </div>
         </div>
       </div>
-      {/* Conditionally render ModalFunct */}
-      {modalVisible && <ModalFunct />}
+      {showModal && <ModalFunct closeModal={() => setShowModal(false)} />}
     </>
   );
 }
