@@ -1,16 +1,18 @@
 .footer {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #1a120b;
   color: #e5e5cb;
-  min-height: 5vh;
+  height: 5vh;
   position: fixed;
   bottom: 0;
-  font-size: 2em;
+  left: 0;
+  right: 0;
 }
 
 #footer {
   display: block;
+  font-size: 2em;
 }
